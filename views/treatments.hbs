@@ -1,107 +1,264 @@
-<div class="container py-5">
-  <h1 class="mb-5 text-center">Onze Behandelingen</h1>
-  
-  <ul class="nav nav-tabs mb-4 justify-content-center" id="treatmentTabs" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pedicure-tab" data-bs-toggle="tab" data-bs-target="#pedicure" type="button" role="tab" aria-controls="pedicure" aria-selected="true">
-        💅 Pedicure
-      </button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="manicure-tab" data-bs-toggle="tab" data-bs-target="#manicure" type="button" role="tab" aria-controls="manicure" aria-selected="false">
-        ✨ Manicure
-      </button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="gelnagels-tab" data-bs-toggle="tab" data-bs-target="#gelnagels" type="button" role="tab" aria-controls="gelnagels" aria-selected="false">
-        💎 Gelnagels
-      </button>
-    </li>
-  </ul>
+<!-- Hero Section -->
+  <section class="hero">
+  <!-- Achtergrond afbeelding -->
+  <img src="/assets/images/Header-ParaDoux.png" alt="Behandelingen" class="hero-image">
 
-  <div class="tab-content" id="treatmentTabContent">
-    <!-- Pedicure Tab -->
-    <div class="tab-pane fade show active" id="pedicure" role="tabpanel" aria-labelledby="pedicure-tab">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Pedicure Behandelingen</h2>
-          <p class="text-muted mb-4">Ontspan en geniet van onze luxe pedicurebehandelingen.</p>
-          
-          <div class="list-group">
-            <div class="list-group-item">
-              <h5>Klassieke Pedicure</h5>
-              <p class="mb-2">Verzorging, nagelbijwerken en nagellak.</p>
-              <span class="badge bg-primary">€25</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Pedicure Deluxe</h5>
-              <p class="mb-2">Inclusief voetmassage en voetmasker.</p>
-              <span class="badge bg-primary">€35</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Gelpedicure</h5>
-              <p class="mb-2">Lange duurzame gelpedicure.</p>
-              <span class="badge bg-primary">€40</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Manicure Tab -->
-    <div class="tab-pane fade" id="manicure" role="tabpanel" aria-labelledby="manicure-tab">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Manicure Behandelingen</h2>
-          <p class="text-muted mb-4">Perfecte nagels met onze professionele manicureservice.</p>
-          
-          <div class="list-group">
-            <div class="list-group-item">
-              <h5>Klassieke Manicure</h5>
-              <p class="mb-2">Nagelbijwerken, verzorging en nagellak.</p>
-              <span class="badge bg-success">€20</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Manicure Deluxe</h5>
-              <p class="mb-2">Inclusief handmassage en handmasker.</p>
-              <span class="badge bg-success">€30</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Gel Manicure</h5>
-              <p class="mb-2">Sterke en glanzende gel nagels.</p>
-              <span class="badge bg-success">€35</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Gelnagels Tab -->
-    <div class="tab-pane fade" id="gelnagels" role="tabpanel" aria-labelledby="gelnagels-tab">
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <h2>Gelnagels Behandelingen</h2>
-          <p class="text-muted mb-4">Duurzame en glanzende gelnagels voor een perfecte look.</p>
-          
-          <div class="list-group">
-            <div class="list-group-item">
-              <h5>Gelnagels Klassiek</h5>
-              <p class="mb-2">Klassieke kleuren en designs.</p>
-              <span class="badge bg-warning">€45</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Gelnagels Premium</h5>
-              <p class="mb-2">Inclusief nail art en speciale designs.</p>
-              <span class="badge bg-warning">€55</span>
-            </div>
-            <div class="list-group-item">
-              <h5>Gelnagels Verlenging</h5>
-              <p class="mb-2">Verlenging van bestaande gelnagels.</p>
-              <span class="badge bg-warning">€30</span>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- Midden van de hero -->
+  <div class="hero-content">
+    <h1>Behandelingen</h1>
+    
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
     </div>
   </div>
+
+  <!-- Tabs onderaan -->
+  <div class="hero-tabs">
+    <button class="tab-button active" data-tab="voetverzorging">Voetverzorging</button>
+    <button class="tab-button" data-tab="handverzorging">Handverzorging</button>
+    <button class="tab-button" data-tab="gelnagels">Gelnagels</button>
+  </div>
+</section>
+
+
+  <!-- Treatments Content -->
+  <section class="treatments-content">
+    <div class="container">
+
+      <!-- VOETVERZORGING TAB -->
+      <div class="tab-panel active" id="voetverzorging">
+        
+        <!-- Treatment 1 -->
+        <div class="treatment-row">
+          <div class="treatment-text">
+            <h2>GESPECIALISEERDE<br>VOETVERZORGING</h2>
+            <p>
+              Een volledige verzorging vand e voeten, waarbij huid- en nagelaandoeningen zorgvuldig worden behandeld en persoonlijk advies wordt gegeven.
+              De aandoeningen kunnen onder andere zijn: eelt, kloven, likdoorns, schimmelnagels, ingegroeide teennagels...
+            </p>
+            <a href="#" class="btn-primary">€40</a>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home-ParaDoux.png" alt="Voetverzorging">
+          </div>
+        </div>
+
+        <!-- Treatment 2 -->
+        <div class="treatment-row reverse">
+          <div class="treatment-text right">
+            <h2>GESPECIALISEERDE <br> VOETVERZORGING + GELLAK</h2>
+            <p>
+              Een volledige verzorging van de voeten, waarbij huid en
+              nagelaandoeningen zorgvuldig worden behandeld en
+              persoonlijk advies wordt gegeven.
+              De nagels worden gelakt met een gellak met kleur naar
+              keuze. Gellak is een sterke nagellak die tot wel zes weken
+              mooi blijft zitten.
+            </p>
+            <a href="#" class="btn-primary">€60</a>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home2-ParaDoux.png" alt="Diabetische voetverzorging">
+          </div>
+        </div>
+
+        <!-- Treatment 3 -->
+        <div class="treatment-row">
+          <div class="treatment-text">
+            <h2>DEELBEHANDELING</h2>
+            <p>
+              Het behandelen van een bepaalde nagel of 
+              huidaandoening.
+            </p>
+            <a href="#" class="btn-primary">€20</a>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home-ParaDoux.png" alt="Medische pedicure">
+          </div>
+        </div>
+
+<div class="samenspraak-section samenspraak text-center">
+  <h1>Behandelingen in samenspraak</h1>
 </div>
+
+<div class="samenspraak-row">
+  <div class="samenspraak-col">
+    <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Medische pedicure">
+    <h2>NAGELBEUGEL</h2>
+    <p>Een klein hulpmiddel dat op de
+    teennagel wordt geplaatst om
+    ingroeien te voorkomen en pijn te
+    verlichten.</p>
+    <a href="#" class="btn-service">€25</a>
+  </div>
+  <div class="samenspraak-col">
+    <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Medische pedicure">
+    <h2>NAGELAANBOUW</h2>
+    <p>Reconstructie van de nagel met gel.</p>
+    <a href="#" class="btn-service">€20 per nagel</a>
+  </div>
+  <div class="samenspraak-col">
+    <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Medische pedicure">
+    <h2>SILICONE ORTHESE</h2>
+    <p>Een zacht hulpmiddel dat tussen
+    of onder de tenen wordt
+    geplaatst om druk te verlichten
+    en pijn te verminderen.</p>
+    <a href="#" class="btn-service">€30</a>
+  </div>
+</div>
+
+
+
+      </div>
+
+      <!-- HANDVERZORGING TAB -->
+      <div class="tab-panel" id="handverzorging">
+        
+        <!-- Treatment 1 -->
+        <div class="treatment-row">
+          <div class="treatment-text">
+            <h2>MANICURE</h2>
+            <p>
+              Tijdens deze behandeling worden nagelriemen en dode
+              huidcellen rondom de nagels verwijderd. De nagels
+              worden in de gewenste vorm gevijld en afgewerkt met
+              hydraterende nagelolie.
+            </p>
+            <a href="#" class="btn-primary">€35</a>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home-ParaDoux.png" alt="Manicure">
+          </div>
+        </div>
+
+        <!-- Treatment 2 -->
+        <div class="treatment-row reverse">
+          <div class="treatment-text right">
+            <h2>MANICURE + GELLAK</h2>
+            <p>
+            Tijdens deze behandeling worden nagelriemen en dode
+            huidcellen rondom de nagels verwijderd. De nagels
+            worden in de gewenste vorm gevijld en afgewerkt met
+            hydraterende nagelolie. Daarna worden de nagels gelakt
+            met een gellak naar keuze, een sterke nagellak die tot wel
+            drie weken mooi blijft zitten.
+            </p>
+            <a href="#" class="btn-primary">€55</a>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home2-ParaDoux.png" alt="Gellak manicure">
+          </div>
+        </div>
+      </div>
+
+      <!-- GELNAGELS TAB -->
+      <div class="tab-panel" id="gelnagels">
+        <div class="treatment-row">
+          <div class="treatment-text gelnagels-intro">
+            <h2>GELNAGELS</h2>
+            <p>Gelnagels zijn kunstnagels die met een gel op je natuurlijke nagels worden aangebracht en vervolgens uitgehard onder een LED-lamp. De nagels worden in de gewenste vorm en lengte gevijld. Daarnaast kunnen ze gelakt worden in de gewenste kleur.</p>
+          </div>
+          <div class="treatment-image">
+            <img src="/assets/images/Home-ParaDoux.png" alt="Gelnagels behandeling">
+          </div>
+        </div>
+
+        <div class="gel-services-row">
+          <div class="gel-service-col">
+            <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Gelnagels nieuwe set">
+            <h3>GELNAGELS NIEUWE SET</h3>
+            <p>Hierbij worden je natuurlijke nagels verlengd met sjablonen. De nagels worden opgebouwd met gel. Hierna kunnen de nagels indien gewenst gelakt worden met een gellak met kleur naar keuze.</p>
+            <a href="#" class="btn-service">€65</a>
+          </div>
+          <div class="gel-service-col">
+            <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Gelnagels verlenging">
+            <h3>GELNAGELS NIEUWE SET MET VERLENGING</h3>
+            <p>Hierbij worden je natuurlijke nagels opgebouwd met gel. Hierna kunnen de nagels indien gewenst gelakt worden met een gellak met kleur naar keuze.</p>
+            <a href="#" class="btn-service">€80</a>
+          </div>
+          <div class="gel-service-col">
+            <img src="/assets/images/Samenspraak-ParaDoux.png" alt="Gelnagels bijwerken">
+            <h3>GELNAGELS BIJWERKEN</h3>
+            <p>De gelnagels worden opgevuld en in vorm gebracht. Hierna kunnen de nagels indien gewenst gelakt worden met een gellak met kleur naar keuze.</p>
+            <a href="#" class="btn-service">€60</a>
+          </div>
+        </div>
+
+        <div class="gel-extras-section">
+          <h3>EXTRA MOGELIJKHEDEN</h3>
+          <div class="gel-extras-content">
+            <div class="gel-extras-list">
+              <div class="gel-extra-item">
+                <span class="gel-extra-name">Reparatie tijdens bijwerking</span>
+                <span class="gel-extra-price">€3 / per nagel</span>
+              </div>
+              <div class="gel-extra-item">
+                <span class="gel-extra-name">Color of babyboom</span>
+                <span class="gel-extra-price">€10</span>
+              </div>
+              <div class="gel-extra-item">
+                <span class="gel-extra-name">French line</span>
+                <span class="gel-extra-price">€5</span>
+              </div>
+              <div class="gel-extra-item">
+                <span class="gel-extra-name">Nail art naar keuze</span>
+                <span class="gel-extra-price">€5 – €15</span>
+              </div>
+              <div class="gel-extra-item">
+                <span class="gel-extra-name">Verwijderen van gelnagels</span>
+                <span class="gel-extra-price">€35</span>
+              </div>
+            </div>
+            <div class="gel-extras-image">
+              <img src="/assets/images/Home-ParaDoux.png" alt="Gelnagels extras voorbeeld">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+        <!-- All Treatments Button -->
+<section class="all-treatments">
+  <a href="#" class="btn-primary">DOWNLOAD PRIJSLIJST</a>
+</section>
+
+  <script>
+    // Tab switching functionality
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons and panels
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabPanels.forEach(panel => panel.classList.remove('active'));
+
+        // Add active class to clicked button
+        button.classList.add('active');
+
+        // Show corresponding panel
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+
+        // Smooth scroll to content
+        document.querySelector('.treatments-content').scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+
+    // Scroll indicator click
+    document.querySelector('.scroll-indicator').addEventListener('click', () => {
+      document.querySelector('.treatments-content').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  </script>

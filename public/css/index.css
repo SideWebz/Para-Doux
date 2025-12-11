@@ -1,0 +1,231 @@
+/* ==============================
+   INDEX / HOME STYLES
+================================ */
+
+/* ========== HERO ========== */
+
+/* Hero Video Achtergrond */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 6rem 2rem;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-logo {
+  width: 500px;
+  max-width: 90%;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  color: #7E6761;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* ========== TREATMENTS SECTION ========== */
+
+.treatments-section {
+  background-color: #e8dcd8;
+  padding: 5rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ====== Treatment Rows ====== */
+.treatment-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5rem;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.treatment-row.reverse {
+  flex-direction: row-reverse;
+}
+
+.treatment-row.manicure {
+  flex-direction: row;
+}
+
+.treatment-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.treatment-text h2 {
+  color: #7E6761;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-size: 2rem;
+}
+
+.treatment-text p {
+  color: #7E6761;
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.treatment-text.right {
+  text-align: right;
+}
+
+.treatment-image {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+}
+
+.treatment-image img {
+  max-width: 100%;
+  height: auto;
+  border-bottom-left-radius: 125px;
+  border-top-right-radius: 125px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+/* ========== ALL TREATMENTS BUTTON ========== */
+
+.all-treatments {
+  text-align: center;
+  background-color: #e8dcd8;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  /* Hero aanpassingen */
+  .hero {
+    min-height: 500px;
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-logo {
+    width: 280px;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Treatments section */
+  .treatments-section {
+    padding: 3rem 1.5rem;
+  }
+
+  /* Treatment rows - alles gecentreerd op mobiel */
+  .treatment-row,
+  .treatment-row.reverse {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  /* Manicure specifiek: image komt ONDER de tekst op mobiel */
+  .treatment-row.manicure {
+    flex-direction: column-reverse;
+    text-align: center;
+    margin-bottom: 3.5rem;
+    gap: 2rem;
+  }
+
+  /* Tekst altijd gecentreerd op mobiel */
+  .treatment-text,
+  .treatment-text.right {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .treatment-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .treatment-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Afbeeldingen op mobiel */
+  .treatment-image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .treatment-image img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* All treatments button section */
+  .all-treatments {
+    padding-bottom: 2rem;
+  }
+}
+
+/* Extra kleine schermen */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 400px;
+    padding: 3rem 1rem;
+  }
+
+  .hero-logo {
+    width: 240px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .treatment-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .treatment-text p {
+    font-size: 0.95rem;
+  }
+
+  .treatments-section {
+    padding: 2rem 1rem;
+  }
+
+  .treatment-row {
+    margin-bottom: 2.5rem;
+    gap: 1.5rem;
+  }
+}

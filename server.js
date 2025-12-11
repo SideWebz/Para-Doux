@@ -23,30 +23,30 @@ app.set('views', path.join(__dirname, 'views'));
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Home' });
+  res.render('index', { title: 'Home', pageStyle: 'index', isHome: true });
 });
 
 app.get('/treatments', (req, res) => {
-  res.render('treatments', { title: 'Behandelingen' });
+  res.render('treatments', { title: 'Behandelingen', pageStyle: 'treatments', isTreatments: true });
 });
 
 app.get('/info', (req, res) => {
-  res.render('info', { title: 'Informatie' });
+  res.render('info', { title: 'Informatie', pageStyle: 'info', isInfo: true });
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', { title: 'Contact' });
+  res.render('contact', { title: 'Contact', pageStyle: 'contact', isContact: true });
 });
 
 app.post('/contact', (req, res) => {
   const { name, email, message } = req.body;
   // Handle form submission here
-  res.render('contact', { title: 'Contact', success: 'Bericht verzonden!' });
+  res.render('contact', { title: 'Contact', pageStyle: 'contact', isContact: true, success: 'Bericht verzonden!' });
 });
 
 // 404 handler
 app.use((req, res) => {
-  res.status(404).render('404', { title: 'Not Found' });
+  res.status(404).render('404', { title: 'Not Found', pageStyle: '404' });
 });
 
 app.listen(PORT, () => {
