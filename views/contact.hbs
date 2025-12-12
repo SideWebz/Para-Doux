@@ -1,82 +1,131 @@
-<div class="container py-5">
-  <div class="row">
-    <div class="col-lg-6 mx-auto">
-      <h1 class="mb-4 text-center">Contact</h1>
-      
-      {{#if success}}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          {{success}}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-      {{/if}}
-      
-      <form method="POST" action="/contact" class="mb-5">
-        <div class="mb-3">
-          <label for="name" class="form-label">Naam *</label>
-          <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        
-        <div class="mb-3">
-          <label for="email" class="form-label">Email *</label>
-          <input type="email" class="form-control" id="email" name="email" required>
-        </div>
-        
-        <div class="mb-3">
-          <label for="phone" class="form-label">Telefoonnummer</label>
-          <input type="tel" class="form-control" id="phone" name="phone">
-        </div>
-        
-        <div class="mb-3">
-          <label for="subject" class="form-label">Onderwerp *</label>
-          <input type="text" class="form-control" id="subject" name="subject" required>
-        </div>
-        
-        <div class="mb-3">
-          <label for="message" class="form-label">Bericht *</label>
-          <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary w-100">Verzenden</button>
-      </form>
-    </div>
-  </div>
+<section class="hero">
+  <img src="/assets/images/Header-ParaDoux.png" alt="Informatie" class="hero-image">
 
-  <div class="container">
-    <div class="row g-4 mt-5">
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">📍 Adres</h5>
-            <p class="card-text">
-              Para Doux<br>
-              [Adres]<br>
-              [Gemeente], [Postcode]
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">📞 Telefoonnummer</h5>
-            <p class="card-text">
-              <a href="tel:+32123456789">+32 (0) 123 456 789</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-md-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">📧 Email</h5>
-            <p class="card-text">
-              <a href="mailto:info@paradoux.be">info@paradoux.be</a>
-            </p>
-          </div>
-        </div>
-      </div>
+  <div class="hero-content">
+    <h1>CONTACT</h1>
+
+    <div class="info-scroll-indicator">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+      </svg>
     </div>
   </div>
-</div>
+</section>
+
+<main class="contact-content">
+  <div class="container">
+
+    <!-- SECTION 1: CONTACTGEGEVENS -->
+    <section class="info-section contact-section">
+      <h2 class="section-heading">CONTACTGEGEVENS</h2>
+      <div class="section-content">
+        <div class="info-row">
+          <div class="info-text">
+          <div class="contact-list">
+            <div class="contact-item">
+              <img src="/assets/svg/mail.svg" alt="E-mail" class="contact-icon">
+              <div>
+                <div class="contact-value"><a href="mailto:paradoux@gmail.com">paradoux@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/svg/call.svg" alt="Phone" class="contact-icon">
+              <div>
+                <div class="contact-value"><a href="tel:+32493680735">0493 68 07 35</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/svg/map.svg" alt="Adres" class="contact-icon">
+              <div>
+                <div class="contact-value"><a href="https://maps.google.com?q=Straatnaam%20123%2C%208000%20Brugge" target="_blank">Straatnaam 123, 8000 Brugge</a></div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/svg/btw.svg" alt="BTW" class="contact-icon">
+              <div>
+                <div class="contact-value">BE0123456789</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <img src="/assets/svg/rek.svg" alt="Rekening" class="contact-icon">
+              <div>
+                <div class="contact-value">BE12 3456 7890 1234</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-image">
+          <img src="/assets/images/ParaDoux-Whatsapp.png" alt="Contact foto">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: STUUR ME EEN MAILTJE -->
+    <section class="info-section contact-section">
+      <h2 class="section-heading">STUUR ME EEN MAILTJE</h2>
+      <div class="section-content">
+        <div class="info-row">
+          <div class="info-text">
+          <form class="contact-form" action="/contact" method="post" novalidate>
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input id="email" type="email" name="email" placeholder="Vul hier je e-mail in" required>
+            </div>
+            <div class="form-field">
+              <label for="name">Naam</label>
+              <input id="name" type="text" name="name" placeholder="Vul hier je naam in" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Telefoon</label>
+              <input id="phone" type="tel" name="phone" placeholder="Vul hier je telefoonnummer" required>
+            </div>
+            <div class="form-field">
+              <label for="subject">Onderwerp</label>
+              <input id="subject" type="text" name="subject" placeholder="Onderwerp" required>
+            </div>
+            <div class="form-field">
+              <label for="message">Bericht</label>
+              <textarea id="message" name="message" placeholder="Typ hier je bericht" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-small">Verzenden</button>
+          </form>
+        </div>
+
+        <div class="info-image contact-form-image">
+          <img src="/assets/images/Home2-ParaDoux.png" alt="Contact foto 2">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OPENINGSUREN & VERLOF -->
+    <section class="info-section contact-section">
+      <h2 class="section-heading">OPENINGSUREN</h2>
+      <div class="section-content">
+        <div class="info-row">
+          <div class="info-text">
+          <ul class="opening-hours">
+            <li>Maandag: 09:00 - 17:00</li>
+            <li>Dinsdag: 09:00 - 17:00</li>
+            <li>Woensdag: 09:00 - 17:00</li>
+            <li>Donderdag: 09:00 - 19:00</li>
+            <li>Vrijdag: 09:00 - 17:00</li>
+            <li>Zaterdag: 09:00 - 14:00</li>
+            <li>Zondag: Gesloten</li>
+          </ul>
+        </div>
+
+        <div class="info-image">
+          <h3>VERLOFPERIODEN</h3>
+          <ul class="vacation-periods">
+            <li>24/12 - 27/12: Kerstverlof</li>
+            <li>01/07 - 14/07: Zomervakantie</li>
+            <li>01/01 - 02/01: Nieuwjaarsverlof</li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </div>
+</main>
