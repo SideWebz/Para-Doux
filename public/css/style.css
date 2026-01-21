@@ -323,8 +323,9 @@ p {
 
 .treatment-image img,
 .info-image img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-bottom-left-radius: 125px;
   border-top-right-radius: 125px;
   border-bottom-right-radius: 20px;
@@ -1093,3 +1094,8 @@ p {
   }
 }
 
+.samenspraak-img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
