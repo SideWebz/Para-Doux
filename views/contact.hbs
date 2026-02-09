@@ -118,9 +118,13 @@
         <div class="info-image">
           <h3>VERLOFPERIODEN</h3>
           <ul class="vacation-periods">
-            <li>24/12 - 27/12: Kerstverlof</li>
-            <li>01/07 - 14/07: Zomervakantie</li>
-            <li>01/01 - 02/01: Nieuwjaarsverlof</li>
+            {{#if verlofDagen}}
+              {{#each verlofDagen}}
+                <li><strong>{{this.naam}}:</strong> {{this.startDatum}} tot {{this.eindDatum}}</li>
+              {{/each}}
+            {{else}}
+              <li class="text-muted">Geen verlofperiodes ingesteld</li>
+            {{/if}}
           </ul>
         </div>
       </div>

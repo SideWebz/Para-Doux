@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}} - Para Doux Backoffice</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    
+    .backoffice-nav {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .backoffice-nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 2rem;
+      transition: opacity 0.3s;
+      font-weight: 500;
+    }
+    
+    .backoffice-nav a:hover {
+      opacity: 0.8;
+    }
+    
+    .backoffice-nav a.active {
+      border-bottom: 3px solid white;
+      padding-bottom: 0.5rem;
+    }
+    
+    .backoffice-nav .logout-btn {
+      color: white;
+      text-decoration: none;
+      margin-left: auto;
+      padding: 0.5rem 1rem;
+      background-color: rgba(255,255,255,0.2);
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    
+    .backoffice-nav .logout-btn:hover {
+      background-color: rgba(255,255,255,0.3);
+    }
+    
+    .navbar-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    
+    .backoffice-title {
+      margin-right: 3rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+    
+    .container-backoffice {
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .login-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - 80px);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .login-container h1 {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Backoffice Navigation -->
+  <nav class="backoffice-nav">
+    <div class="container-fluid px-4">
+      <div class="navbar-content">
+        <span class="backoffice-title">Para Doux Admin</span>
+        <a href="/backoffice" {{#if isDashboard}}class="active"{{/if}}>Dashboard</a>
+        <a href="/backoffice/verlof" {{#if isVerlof}}class="active"{{/if}}>Verlofperiodes</a>
+        <a href="/backoffice/popups" {{#if isPopups}}class="active"{{/if}}>Popups</a>
+        <a href="/backoffice/logout" class="logout-btn">Uitloggen</a>
+      </div>
+    </div>
+  </nav>
+
+    <div>
+      {{{body}}}
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

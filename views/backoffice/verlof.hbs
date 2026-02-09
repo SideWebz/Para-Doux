@@ -1,0 +1,79 @@
+<div class="container mt-4">
+<div class="mb-4">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Nieuwe verlofperiode toevoegen</h5>
+      <form method="POST" action="/backoffice/verlof/add">
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="naam" class="form-label">Naam/Omschrijving</label>
+            <input type="text" class="form-control" id="naam" name="naam" placeholder="bv. Zomervakantie" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="startDatum" class="form-label">Startdatum</label>
+            <input type="date" class="form-control" id="startDatum" name="startDatum" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="eindDatum" class="form-label">Einddatum</label>
+            <input type="date" class="form-control" id="eindDatum" name="eindDatum" required>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success">Toevoegen</button>
+      </form>
+    </div>
+  </div>
+</div>
+{{#if verlofDagen}}
+<div class="card">
+  <div class="card-header">
+    <h5 class="mb-0">Verlofperiodes ({{verlofDagen.length}})</h5>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Naam</th>
+            <th>Startdatum</th>
+            <th>Einddatum</th>
+            <th>Actie</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each verlofDagen}}
+          <tr>
+            <td>{{this.naam}}</td>
+            <td>{{this.startDatum}}</td>
+            <td>{{this.eindDatum}}</td>
+            <td>
+              <form method="POST" action="/backoffice/verlof/delete/{{this.id}}" style="display:inline;">
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Zeker weten?')">Verwijderen</button>
+              </form>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="alert alert-secondary">
+  <p class="mb-0">Geen verlofperiodes ingesteld.</p>
+</div>
+{{/if}}
+</div>
+
+
+
+
+
+<style>
+  .table {
+    margin-bottom: 0;
+  }
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+</style>

@@ -1,0 +1,61 @@
+<div class="login-page">
+ <div class="col-md-6">
+      <div class="card shadow-lg">
+        <div class="card-body p-5">
+          <h1 class="text-center mb-4">Backoffice Login</h1>
+          
+          {{#if error}}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              {{error}}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+          {{/if}}
+          
+          <form method="POST">
+            <div class="mb-3">
+              <label for="username" class="form-label">Gebruikersnaam</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            
+            <div class="mb-3">
+              <label for="password" class="form-label">Wachtwoord</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Inloggen</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
+   
+
+<style>
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+  
+  .card {
+    border: none;
+    border-radius: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #667eea;
+    border-color: #667eea;
+  }
+  
+  .btn-primary:hover {
+    background-color: #764ba2;
+    border-color: #764ba2;
+  }
+
+  .login-page {
+  min-height: calc(100vh - 80px); /* hoogte navbar */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+</style>

@@ -1,0 +1,20 @@
+{
+  "verlof": [
+    {
+      "id": 1770667568946,
+      "naam": "ZomerVakantie",
+      "startDatum": "2026-02-12",
+      "eindDatum": "2026-02-28",
+      "createdAt": "2026-02-09T20:06:08.946Z"
+    }
+  ],
+  "popups": [
+    {
+      "id": 1770667641260,
+      "title": "Verlof",
+      "content": "Hey iedereen sorry voor het ongemak ik ben van 02/11/26 tot 19/11/26 in verlof",
+      "active": true,
+      "createdAt": "2026-02-09T20:07:21.260Z"
+    }
+  ]
+}

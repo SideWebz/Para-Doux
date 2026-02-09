@@ -1,3 +1,17 @@
+<!-- Popups -->
+{{#if popups}}
+{{#each popups}}
+<div class="popup-modal" id="popup-{{this.id}}">
+  <div class="popup-content">
+    <button class="popup-close" onclick="closePopup({{this.id}})">&times;</button>
+    <h2>{{this.title}}</h2>
+    <p>{{{this.content}}}</p>
+    <button class="btn-primary" onclick="closePopup({{this.id}})">Sluiten</button>
+  </div>
+</div>
+{{/each}}
+{{/if}}
+
 <!-- Hero Section -->
 <section class="hero">
   <!-- Video achtergrond -->
@@ -60,3 +74,103 @@
 <section class="all-treatments">
   <a href="/treatments" class="btn-primary">Ontdek alle behandelingen</a>
 </section>
+
+<style>
+  .popup-modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .popup-modal.hide {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .popup-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+  }
+
+  .popup-content p {
+    margin-bottom: 20px;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  .popup-close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #999;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  .popup-close:hover {
+    color: #000;
+  }
+</style>
+
+<script>
+  function closePopup(id) {
+    document.getElementById('popup-' + id).classList.add('hide');
+  }
+
+  // Automatically show first popup on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    const modals = document.querySelectorAll('.popup-modal');
+    if (modals.length > 0) {
+      modals[0].classList.remove('hide');
+    }
+  });
+
+  // Close popup when clicking outside the content
+  document.querySelectorAll('.popup-modal').forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.add('hide');
+      }
+    });
+  });
+</script>
