@@ -291,10 +291,11 @@ p {
 .info-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 3rem;
   margin-bottom: 5rem;
   flex-wrap: wrap;
+
 }
 
 .treatment-row.reverse,
@@ -306,7 +307,7 @@ p {
 .info-text {
   flex: 1;
   min-width: 300px;
-  max-width: 600px;
+  max-width: 670px;
 }
 
 .treatment-text.right,
@@ -832,7 +833,7 @@ p {
 .contact-section .info-image,
 .contact-section .contact-image {
   flex: 0 0 320px;
-  max-width: 320px;
+  max-width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1137,3 +1138,16 @@ p {
     font-size: 14px;
 }
 
+
+
+
+
+.prijs-lijst-section{
+margin-top: 3rem;
+margin-bottom: 10rem;
+}
+
+.verlof{
+  height: 100%;
+
+}

@@ -1,11 +1,11 @@
 {
   "verlof": [
     {
-      "id": 1770667568946,
-      "naam": "ZomerVakantie",
-      "startDatum": "2026-02-12",
-      "eindDatum": "2026-02-28",
-      "createdAt": "2026-02-09T20:06:08.946Z"
+      "id": 1770731085607,
+      "naam": "KerstVakantie",
+      "startDatum": "2026-12-23",
+      "eindDatum": "2026-12-31",
+      "createdAt": "2026-02-10T13:44:45.607Z"
     }
   ],
   "popups": [
