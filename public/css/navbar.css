@@ -155,3 +155,15 @@
     overflow: auto;
   }
 }
+
+.boek-nu {
+  background-color: #a87365;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.boek-nu:hover {
+  background-color: #8b5c52;
+  color: #fff;
+}

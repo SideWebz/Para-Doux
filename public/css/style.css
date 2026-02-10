@@ -272,6 +272,7 @@ p {
 .info-content {
   background-color: var(--bg-color);
   padding: 5rem 2rem;
+  padding-bottom: 0rem;
 }
 
 .tab-panel,
@@ -326,8 +327,8 @@ p {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-bottom-left-radius: 125px;
-  border-top-right-radius: 125px;
+  border-bottom-left-radius: clamp(75px, 20% + 10px, 125px);
+  border-top-right-radius: clamp(75px, 20% + 10px, 125px);
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
@@ -421,6 +422,7 @@ p {
   text-align: center;
   background-color: var(--bg-color);
   padding: 3rem 2rem;
+  padding-top: 0rem;
 }
 
 /* ========== CREDITS SECTION ========== */
@@ -557,6 +559,7 @@ p {
   .treatments-content,
   .info-content {
     padding: 3rem 1.5rem;
+    padding-bottom: 0rem;
   }
 
   .treatment-row,
@@ -573,7 +576,7 @@ p {
   .treatment-text.right,
   .info-text,
   .info-text.right {
-    text-align: center;
+    text-align: start;
     max-width: 100%;
   }
 
@@ -596,8 +599,10 @@ p {
 
   .treatment-image img,
   .info-image img {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
+    border-bottom-left-radius: 75px;
+    border-top-right-radius: 75px;
   }
 
   .section-title {
@@ -707,6 +712,7 @@ p {
   .treatments-content,
   .info-content {
     padding: 2rem 1rem;
+    padding-bottom: 0rem;
   }
 
   .treatment-row,
@@ -1099,3 +1105,35 @@ p {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+
+.review-card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.reviewer-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #202124;
+}
+
+.stars {
+    color: #fbbc04;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: #5f6368;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
