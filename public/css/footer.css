@@ -92,11 +92,25 @@
   color: #7E6761;
   text-decoration: none;
   font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links a:hover {
+  color: #5a4a45;
+}
+
+.footer-social .social-links a:hover svg path {
+  fill: #5a4a45;
 }
 
 .footer-social .social-links svg {
   width: 25px;
   height: 25px;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-links svg path {
+  transition: fill 0.3s ease;
 }
 
 /* Separator */
@@ -122,14 +136,21 @@
   justify-content: center;
 }
 
-  .footer-copy p{
-    margin-bottom: 0;
-  }
+.footer-copy p{
+  margin-bottom: 0;
+}
 
+/* All footer links - consistent styling */
 .footer-links a,
 .footer-credit a {
   color: #7E6761;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-credit a:hover {
+  color: #5a4a45;
 }
 
 /* Tablet and Desktop */
@@ -140,8 +161,6 @@
     align-items: center;
     gap: 2rem;
   }
-
-
 
   /* Reorder for desktop: contact, logo, social */
   .footer-brand {
@@ -177,4 +196,33 @@
   .footer-links {
     gap: 2rem;
   }
+}
+
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  text-decoration: none;
+  color: #7E6761;
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.footer-contact-item p {
+  color: inherit;
+}
+
+.footer-contact-item svg path {
+  transition: fill 0.3s ease;
+}
+
+.footer-contact-item:hover {
+  color: #5a4a45;
+}
+
+.footer-contact-item:hover svg path {
+  fill: #5a4a45;
 }
