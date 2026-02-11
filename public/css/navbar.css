@@ -5,10 +5,16 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-header.scrolled {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-main {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .navbar-container {
@@ -20,9 +26,20 @@
   align-items: center;
 }
 
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  z-index: 1100;
+}
+
 .navbar-logo-img {
   height: 50px;
   width: 50px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  transform: scale(1.05);
 }
 
 /* ========== DESKTOP NAV ========== */
@@ -33,20 +50,65 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  margin: 0;
 }
 
 .nav-link {
   color: #5a5a5a;
   text-decoration: none;
-  padding: 0.5rem 2rem;
+  padding: 0.75rem 1.5rem;
   border-bottom: 2px solid transparent;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   display: block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  position: relative;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
+  color: #a87365;
   border-bottom-color: #a87365;
+}
+
+.nav-link.active {
+  color: #a87365;
+  border-bottom-color: #a87365;
+  font-weight: 600;
+}
+
+/* ========== BOEK NU BUTTON ========== */
+
+.btn-primary {
+  background-color: #a87365;
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(168, 115, 101, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #8b5c52;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(168, 115, 101, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 /* ========== HAMBURGER ========== */
@@ -54,10 +116,13 @@
 .hamburger {
   display: none;
   width: 30px;
-  height: 22px;
+  height: 24px;
   position: relative;
   cursor: pointer;
   z-index: 1100;
+  padding: 4px;
+  background: transparent;
+  border: none;
 }
 
 .hamburger span {
@@ -66,7 +131,8 @@
   height: 3px;
   background-color: #5a5a5a;
   left: 0;
-  transition: 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
 }
 
 .hamburger span:nth-child(1) {
@@ -74,51 +140,92 @@
 }
 
 .hamburger span:nth-child(2) {
-  top: 9px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .hamburger span:nth-child(3) {
   bottom: 0;
 }
 
+.hamburger.active span {
+  background-color: #a87365;
+}
+
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg);
-  top: 9px;
+  top: 50%;
 }
 
 .hamburger.active span:nth-child(2) {
   opacity: 0;
+  transform: translateX(-20px);
 }
 
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg);
-  bottom: 10px;
+  top: 50%;
 }
 
-/* ========== MOBILE FULLSCREEN MENU ========== */
+/* ========== TABLET (769px - 1024px) ========== */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .navbar-container {
+    padding: 0 30px;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== MOBILE & TABLET (max-width: 768px) ========== */
 
 @media (max-width: 768px) {
 
-  .hamburger {
-    display: block;
+  .navbar-main {
+    padding: 0.75rem 0;
   }
 
+  .navbar-container {
+    padding: 0 16px;
+  }
+
+  .navbar-logo-img {
+    height: 45px;
+    width: 45px;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Fullscreen Mobile Menu */
   .navbar-nav {
     position: fixed;
     inset: 0;
     height: 100vh;
-    height: 100dvh; /* Voor betere mobiele ondersteuning */
+    height: 100dvh;
     width: 100%;
     background: linear-gradient(135deg, #e8dcd8 0%, #f0e6e2 100%);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     transform: translateY(-100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1050;
     opacity: 0;
+    overflow-y: auto;
   }
 
   .navbar-nav.active {
@@ -128,9 +235,10 @@
                 opacity 0.3s ease 0.1s;
   }
 
+  /* Animated Menu Items */
   .nav-item {
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     text-align: center;
     opacity: 0;
     transform: translateY(20px);
@@ -148,6 +256,7 @@
   .navbar-nav.active .nav-item:nth-child(4) { transition-delay: 0.25s; }
   .navbar-nav.active .nav-item:nth-child(5) { transition-delay: 0.3s; }
 
+  /* Mobile Nav Links */
   .nav-link {
     font-size: 1.5rem;
     font-weight: 500;
@@ -158,6 +267,7 @@
     background-color: transparent;
     position: relative;
     letter-spacing: 0.5px;
+    width: 100%;
   }
 
   .nav-link::before {
@@ -177,28 +287,103 @@
     width: 60%;
   }
 
+  .nav-link:hover {
+    border-bottom-color: transparent;
+  }
+
   .nav-link:active {
     transform: scale(0.98);
   }
 
-  .boek-nu {
-    margin-top: 1rem;
+  /* Mobile Boek Nu Button */
+  .nav-item.ms-lg-3 {
+    margin-top: 1.5rem;
+  }
+
+  .btn-primary {
+    margin-top: 0.5rem;
     padding: 1rem 2.5rem;
     font-size: 1.2rem;
     box-shadow: 0 4px 12px rgba(168, 115, 101, 0.3);
+    width: 100%;
+    max-width: 280px;
   }
 
-  .boek-nu:hover {
+  .btn-primary:hover {
     box-shadow: 0 6px 16px rgba(168, 115, 101, 0.4);
     transform: translateY(-2px);
   }
 
+  /* Prevent body scroll when menu is open */
   body.menu-open {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
 }
 
-/* ========== DESKTOP FORCE FIX ========== */
+/* ========== SMALL MOBILE (max-width: 480px) ========== */
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 12px;
+  }
+
+  .navbar-logo-img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .hamburger {
+    width: 28px;
+    height: 22px;
+  }
+
+  .hamburger span {
+    height: 2.5px;
+  }
+
+  .navbar-nav {
+    padding: 1.5rem 1rem;
+  }
+
+  .nav-item {
+    max-width: 280px;
+  }
+
+  .nav-link {
+    font-size: 1.35rem;
+    padding: 1.1rem 1.75rem;
+    margin: 0.4rem 0;
+  }
+
+  .btn-primary {
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
+    max-width: 250px;
+  }
+}
+
+/* ========== EXTRA SMALL MOBILE (max-width: 360px) ========== */
+
+@media (max-width: 360px) {
+  .navbar-logo-img {
+    height: 38px;
+    width: 38px;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 1.75rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* ========== DESKTOP FORCE FIX (min-width: 769px) ========== */
 
 @media (min-width: 769px) {
 
@@ -211,11 +396,14 @@
     justify-content: flex-end;
     background: none;
     opacity: 1;
+    overflow: visible;
   }
 
   .nav-item {
     opacity: 1;
     transform: none;
+    width: auto;
+    max-width: none;
   }
 
   .hamburger {
@@ -224,22 +412,68 @@
 
   body.menu-open {
     overflow: auto;
+    position: static;
+  }
+
+  .nav-item.ms-lg-3 {
+    margin-left: 1rem;
   }
 }
 
-.boek-nu {
-  background-color: #a87365;
-  color: #fff;
-  padding: 0.5rem 1.5rem;
-  border-radius: 4px;
-  transition: all 0.3s ease;
-  border: none;
-  text-decoration: none;
-  display: inline-block;
+/* ========== LARGE DESKTOP (min-width: 1200px) ========== */
+
+@media (min-width: 1200px) {
+  .navbar-container {
+    padding: 0 40px;
+  }
+
+  .navbar-logo-img {
+    height: 55px;
+    width: 55px;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
 }
 
-.boek-nu:hover {
-  background-color: #8b5c52;
-  color: #fff;
+/* ========== ANIMATIONS & SMOOTH SCROLLING ========== */
+
+html {
+  scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .navbar-nav,
+  .nav-item,
+  .nav-link,
+  .hamburger span,
+  .btn-primary {
+    transition: none !important;
+  }
+}
+
+/* ========== FOCUS STATES (ACCESSIBILITY) ========== */
+
+.nav-link:focus,
+.btn-primary:focus,
+.hamburger:focus {
+  outline: 2px solid #a87365;
+  outline-offset: 2px;
+}
+
+.nav-link:focus:not(:focus-visible),
+.btn-primary:focus:not(:focus-visible),
+.hamburger:focus:not(:focus-visible) {
+  outline: none;
+}
