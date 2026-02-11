@@ -134,12 +134,13 @@ p {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 600px;
-  padding: 0 2rem;
+  padding: 2rem;
   background-color: var(--bg-color);
+  gap: 2rem;
 }
 
 .hero-video {
@@ -178,8 +179,15 @@ p {
 .hero-content {
   position: relative;
   z-index: 2;
-  margin-top: 12.5%;
-  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-content h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 .hero-logo {
@@ -201,16 +209,21 @@ p {
 .info-scroll-indicator {
   position: relative;
   z-index: 2;
-  margin-top: 2rem;
   animation: bounce 2s infinite;
   cursor: pointer;
 }
 
 .scroll-indicator svg,
 .info-scroll-indicator svg {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   fill: var(--primary-color);
+  transition: var(--transition);
+}
+
+.scroll-indicator:hover svg,
+.info-scroll-indicator:hover svg {
+  fill: rgba(185, 109, 95, 0.7);
 }
 
 @keyframes bounce {
@@ -229,12 +242,14 @@ p {
 
 .hero-tabs,
 .info-tabs {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1rem;
 }
 
 .tab-button,
@@ -242,19 +257,22 @@ p {
   background: var(--primary-color);
   color: white;
   border: 3px solid transparent;
-  padding: 0.2rem 2.5rem;
-  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   cursor: pointer;
   transition: var(--transition);
   letter-spacing: 1px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: 300;
+  white-space: nowrap;
+  text-align: center;
 }
 
 .tab-button:hover,
 .info-tab-button:hover {
   background: rgba(185, 109, 95, 0.7);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(185, 109, 95, 0.3);
 }
 
 .tab-button.active,
@@ -263,6 +281,82 @@ p {
   color: var(--primary-color);
   border-color: var(--primary-color);
   font-weight: 500;
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 500px;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero-tabs,
+  .info-tabs {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 500px;
+    gap: 0.75rem;
+  }
+
+  .tab-button:nth-child(3),
+  .info-tab-button:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 250px;
+    justify-self: center;
+  }
+
+  .tab-button,
+  .info-tab-button {
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+  }
+
+  .scroll-indicator svg,
+  .info-scroll-indicator svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 450px;
+    padding: 1rem;
+  }
+
+  .hero-tabs,
+  .info-tabs {
+    max-width: 100%;
+    gap: 0.6rem;
+  }
+
+  .tab-button,
+  .info-tab-button {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (max-width: 416px) {
+  .hero-tabs,
+  .info-tabs {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+
+  .tab-button:nth-child(3),
+  .info-tab-button:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .tab-button,
+  .info-tab-button {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+  }
 }
 
 /* ========== CONTENT SECTIONS ========== */
