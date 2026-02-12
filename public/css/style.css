@@ -63,7 +63,7 @@ h3 {
   background-color: var(--primary-color);
   color: white;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: clamp(0.75rem, 4vw, 1rem);
   padding: 0.3rem 2rem;
   border: none;
   border-radius: 4px;
@@ -257,7 +257,6 @@ p {
   background: var(--primary-color);
   color: white;
   border: 3px solid transparent;
-  padding: 0.75rem 1.5rem;
   font-size: clamp(1rem, 2vw, 1.3rem);
   cursor: pointer;
   transition: var(--transition);
@@ -266,6 +265,7 @@ p {
   font-weight: 300;
   white-space: nowrap;
   text-align: center;
+  padding: 0.15rem 1.0rem;
 }
 
 .tab-button:hover,
@@ -308,7 +308,6 @@ p {
 
   .tab-button,
   .info-tab-button {
-    padding: 0.65rem 1rem;
     font-size: 1rem;
   }
 
@@ -333,7 +332,6 @@ p {
 
   .tab-button,
   .info-tab-button {
-    padding: 0.6rem 0.75rem;
     font-size: 0.9rem;
   }
 }
@@ -354,7 +352,6 @@ p {
 
   .tab-button,
   .info-tab-button {
-    padding: 0.7rem 1rem;
     font-size: 1rem;
   }
 }
@@ -646,7 +643,6 @@ p {
 
   .tab-button,
   .info-tab-button {
-    padding: 0.6rem 1.5rem;
     font-size: 1rem;
   }
 
@@ -799,7 +795,6 @@ p {
   .tab-button,
   .info-tab-button {
     width: 100%;
-    padding: 0.6rem 1rem;
     font-size: 0.95rem;
   }
 
@@ -825,12 +820,6 @@ p {
   .info-text p {
     font-size: 0.95rem;
     line-height: 1.6;
-  }
-
-  .btn-primary,
-  .btn-service {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.95rem;
   }
 
   .section-title {
@@ -974,6 +963,17 @@ Copy
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  transition: transform 0.1s ease;
+}
+
+
+
+.contact-image img {
+  transition: transform 0.15s ease-in-out;
+}
+
+.contact-image img:hover {
+  transform: scale(1.03);
 }
 
 .contact-section .info-image img,
@@ -1194,7 +1194,6 @@ Copy
   .btn-primary.btn-small {
     width: 100%;
     text-align: center;
-    padding: 0.75rem 1.5rem;
   }
 
   /* Opening hours */
@@ -1459,3 +1458,8 @@ margin-bottom: 10rem;
 .seperate{
   margin-bottom: clamp(8rem, 5vw, 20rem);
 }
+
+.bottom-padding{
+  padding-bottom: 8rem;
+}
+
