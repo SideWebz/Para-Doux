@@ -73,7 +73,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/treatments', (req, res) => {
+app.get('/behandelingen', (req, res) => {
   res.render('treatments', { title: 'Behandelingen', pageStyle: 'treatments', isTreatments: true });
 });
 
