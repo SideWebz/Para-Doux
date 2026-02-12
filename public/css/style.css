@@ -1452,3 +1452,10 @@ margin-bottom: 10rem;
   height: 100%;
 
 }
+
+
+
+
+.seperate{
+  margin-bottom: clamp(8rem, 5vw, 20rem);
+}
