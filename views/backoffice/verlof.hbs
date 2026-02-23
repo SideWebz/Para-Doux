@@ -23,7 +23,7 @@
     </div>
   </div>
 </div>
-{{#if verlofDagen}}
+{{#if verlofDagen.length}}
 <div class="card">
   <div class="card-header">
     <h5 class="mb-0">Verlofperiodes ({{verlofDagen.length}})</h5>
@@ -56,10 +56,6 @@
       </table>
     </div>
   </div>
-</div>
-{{else}}
-<div class="alert alert-secondary">
-  <p class="mb-0">Geen verlofperiodes ingesteld.</p>
 </div>
 {{/if}}
 </div>

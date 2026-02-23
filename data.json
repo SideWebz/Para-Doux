@@ -1,13 +1,5 @@
 {
-  "verlof": [
-    {
-      "id": 1770731085607,
-      "naam": "KerstVakantie",
-      "startDatum": "2026-12-23",
-      "eindDatum": "2026-12-31",
-      "createdAt": "2026-02-10T13:44:45.607Z"
-    }
-  ],
+  "verlof": [],
   "popups": [
     {
       "id": 1770667641260,
