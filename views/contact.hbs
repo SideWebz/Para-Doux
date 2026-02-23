@@ -129,18 +129,16 @@
           </ul>
         </div>
 
-        <div class="verlof">
-          <h3>VERLOFPERIODEN</h3>
-          <ul class="vacation-periods">
-            {{#if verlofDagen}}
-              {{#each verlofDagen}}
-                <li><strong>{{this.naam}}:</strong> {{this.startDatum}} tot {{this.eindDatum}}</li>
-              {{/each}}
-            {{else}}
-              <li class="text-muted">Geen verlofperiodes ingesteld</li>
-            {{/if}}
-          </ul>
-        </div>
+        {{#if verlofDagen}}
+<div class="verlof">
+  <h3>VERLOFPERIODEN</h3>
+  <ul class="vacation-periods">
+    {{#each verlofDagen}}
+      <li><strong>{{this.naam}}:</strong> {{this.startDatum}} tot {{this.eindDatum}}</li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}
       </div>
       </div>
     </section>
