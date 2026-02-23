@@ -70,6 +70,19 @@
       <div class="section-content">
         <div class="info-row">
           <div class="info-text">
+          
+          {{#if success}}
+            <div class="form-message success" style="background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+              <strong>Succes!</strong> {{{success}}}
+            </div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="form-message error" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+              <strong>Fout!</strong> {{{error}}}
+            </div>
+          {{/if}}
+
           <form class="contact-form" action="/contact" method="post" novalidate>
             <div class="form-field">
               <label for="email">E-mail</label>
