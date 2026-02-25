@@ -53,6 +53,7 @@
               </div>
             </div>
           </div>
+          <p class="text-muted">Betaling is mogelijk met cash en payconiq</p>
         </div>
 
 <div class="contact-image">
@@ -145,3 +146,12 @@
 
   </div>
 </main>
+
+<script>
+  const indicator = document.querySelector('.info-scroll-indicator');
+  if (indicator) {
+    indicator.addEventListener('click', () => {
+      document.querySelector('.contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+</script>
