@@ -194,13 +194,13 @@ p {
 .hero-logo {
   width: 500px;
   max-width: 90%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .hero p {
   color: var(--text-color);
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   letter-spacing: 1px;
 }
 
@@ -758,12 +758,12 @@ p {
 
   .hero-logo {
     width: 280px;
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .hero p {
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
   }
 }
 
